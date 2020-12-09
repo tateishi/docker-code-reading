@@ -6,6 +6,7 @@ ENV USER=ubuntu
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
         xorg-dev \
+        ca-certificates \
         git \
         bash-completion \
         cmake \
@@ -25,3 +26,5 @@ RUN echo "[ -f ~/.config/bash/bashrc_extra.sh ] && source ~/.config/bash/bashrc_
 RUN mkdir -p .config tmp
 COPY files/config.tar.gz tmp
 RUN tar xvzf tmp/config.tar.gz -C .config
+RUN mkdir -p .vim && ln -s ~/.config/vim/vimrc .vim/vimrc
+RUN mkdir -p .vim/bundle && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
