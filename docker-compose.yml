@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  default:
+    build:
+      context: ./code
+    tty: true
+    stdin_open: true
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ~/wks:/home/ubuntu/wks
+#      - ~/.bashrc:/home/ubuntu/.bashrc
+#      - ~/.dotconfig:/home/ubuntu/.dotconfig

@@ -1,0 +1,7 @@
+# -*- mode: sh; coding: utf-8 -*-
+
+CONF=~/.config/gtags/gtags.conf
+if [ -f ${CONF} ]; then
+    export GTAGSCONF=${CONF}
+    export GTAGSLABEL=ctags
+fi

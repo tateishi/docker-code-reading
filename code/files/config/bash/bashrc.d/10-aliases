@@ -1,0 +1,9 @@
+# -*- mode: sh -*-
+
+# emacsclient
+alias em='emacsclient -t -a ""'
+alias ekill='emacsclient -e "(kill-emacs)"'
+
+# pushd
+alias pd=pushd
+alias dirs='dirs -v'
