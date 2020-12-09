@@ -4,6 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV USER=ubuntu
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+        language-pack-ja \
         build-essential \
         xorg-dev \
         ca-certificates \
@@ -17,6 +18,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         less \
         source-highlight
 
+RUN update-locale LANG=ja_JP.UTF-8
+ENV LANG=ja_JP.utf-8
 RUN useradd -u 1000 -m -s /bin/bash ${USER}
 
 USER ${USER}
